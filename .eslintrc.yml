@@ -3,11 +3,12 @@ env:
   browser: true
   es2021: true
 extends:
-  - eslint:all
+  - eslint:recommended
   - plugin:react/recommended
   - plugin:react/jsx-runtime
   - plugin:react-hooks/recommended
   - plugin:jsx-a11y/strict
+  - plugin:storybook/recommended
   - standard-with-typescript
   - prettier
 overrides: []
@@ -24,8 +25,7 @@ plugins:
   - jsx-a11y
   - prettier
 rules:
-  sort-imports: "off"
-  no-magic-numbers: "off"
+  "@typescript-eslint/strict-boolean-expressions": "off"
   react/hook-use-state:
     - 1
     - allowDestructuredState: true

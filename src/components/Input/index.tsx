@@ -2,7 +2,7 @@ import { type InputHTMLAttributes, forwardRef } from "react"
 import clsx from "clsx"
 import classes from "./index.module.sass"
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   variant?: "primary" | "secondary"
 }
 
