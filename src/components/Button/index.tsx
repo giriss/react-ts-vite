@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, FC } from "react"
+import clsx from "clsx"
 import classes from "./index.module.sass"
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,7 +12,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => (
   <button
-    className={`${classes.common} ${classes[variant]} ${className ?? ""}`}
+    className={clsx(classes.common, classes[variant], className)}
     {...props}
   />
 )

@@ -1,5 +1,6 @@
 import { type FC, useState, useCallback } from "react"
 import Button from "./components/Button"
+import Input from "./components/Input"
 import classes from "./App.module.sass"
 
 const App: FC = () => {
@@ -10,6 +11,7 @@ const App: FC = () => {
 
   return (
     <main className={classes.mainApp}>
+      <Input value={count} />
       <Button onClick={increment}>Count: {count}</Button>
     </main>
   )
