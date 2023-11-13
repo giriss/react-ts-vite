@@ -1,8 +1,8 @@
 import { type FC, useState, useCallback, type HTMLProps } from "react"
 import styled from "@emotion/styled"
 
-import Button from "./components/Button"
-import Input from "./components/Input"
+import Button from "@@/Button"
+import Input from "@@/Input"
 
 const BaseApp: FC<HTMLProps<HTMLElement>> = props => {
   const [count, setCount] = useState(0)
