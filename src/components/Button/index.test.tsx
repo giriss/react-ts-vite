@@ -1,9 +1,9 @@
-import { screen, render } from "@testing-library/react"
+import { screen, renderWithTheme } from "@test/utils"
 import Button from "."
 
 describe("Button", () => {
   it("shows the proper text", () => {
-    render(<Button>Test Button</Button>)
+    renderWithTheme(<Button>Test Button</Button>)
     expect(screen.getByText("Test Button")).toBeInTheDocument()
   })
 })

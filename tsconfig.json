@@ -8,7 +8,8 @@
     "types": ["vitest/globals"],
     "paths": {
       "@/*": ["./src/*"],
-      "@@/*": ["./src/components/*"]
+      "@@/*": ["./src/components/*"],
+      "@test/*": ["./.vitest/*"]
     },
 
     /* Bundler mode */
@@ -26,6 +27,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", ".vitest-setup.ts"],
+  "include": [
+    "src",
+    ".vitest/setup.ts",
+    ".vitest/utils.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
