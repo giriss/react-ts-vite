@@ -20,7 +20,7 @@ const BaseApp: FC<HTMLProps<HTMLElement>> = props => {
 }
 
 const App = styled(BaseApp)`
-  margin: 20px;
+  margin: ${({ theme }) => theme.spacing.large};
 `
 
 App.displayName = "App"

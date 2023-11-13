@@ -11,20 +11,29 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 /**
  * Primary UI component for user interaction
  */
-const Button = styled.button<ButtonProps>(({ variant = "primary" }) => ({
-  padding: "5px 10px",
-  borderRadius: "3px",
-  cursor: "pointer",
-  border: `solid 1px ${variant === "primary" ? "#00a1ba" : "#bbb"}`,
-  backgroundColor: variant === "primary" ? "#02afc9" : "#ccc",
-  color: variant === "primary" ? "white" : undefined,
-  ":hover": {
-    boxShadow: `0 0 10px ${variant === "primary" ? "#00a1ba" : "#bbb"}`,
-  },
-  ":active": {
-    backgroundColor: variant === "primary" ? "#02c1de" : "#ddd",
-  },
-}))
+const Button = styled.button<ButtonProps>(
+  ({
+    theme: {
+      colors: { primary, secondary },
+    },
+    variant = "primary",
+  }) => ({
+    padding: "5px 10px",
+    borderRadius: "3px",
+    cursor: "pointer",
+    border: `solid 1px ${(variant === "primary" ? primary : secondary)[100]}`,
+    backgroundColor: (variant === "primary" ? primary : secondary)[200],
+    color: variant === "primary" ? "white" : undefined,
+    ":hover": {
+      boxShadow: `0 0 10px ${
+        (variant === "primary" ? primary : secondary)[100]
+      }`,
+    },
+    ":active": {
+      backgroundColor: (variant === "primary" ? primary : secondary)[300],
+    },
+  }),
+)
 
 Button.displayName = "Button"
 

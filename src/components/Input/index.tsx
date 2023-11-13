@@ -9,15 +9,22 @@ const Input = styled("input")<InputProps>`
   outline: none;
   padding: 5px 10px;
   border-radius: 3px;
-  border: solid 1px rgb(200, 200, 200);
   min-width: 300px;
-  border: solid 1px rgb(200, 200, 200);
+  border: solid 1px ${({ theme }) => theme.colors.secondary[300]};
 
   :focus {
-    border-color: ${({ variant }) =>
-      variant === "primary" ? "rgb(35, 149, 219)" : "rgb(100, 100, 100)"};
-    ${({ variant }) =>
-      variant === "primary" && "box-shadow: 0 0 10px rgb(41, 158, 230);"}
+    border-color: ${({
+      variant,
+      theme: {
+        colors: { primary, secondary },
+      },
+    }) => (variant === "primary" ? primary : secondary)[100]};
+    ${({
+      variant,
+      theme: {
+        colors: { primary },
+      },
+    }) => variant === "primary" && `box-shadow: 0 0 10px ${primary[300]};`}
   }
 `
 
