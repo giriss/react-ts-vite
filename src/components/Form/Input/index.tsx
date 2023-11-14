@@ -1,7 +1,6 @@
-import { type InputHTMLAttributes } from "react"
 import styled from "@emotion/styled"
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps {
   variant?: "primary" | "secondary"
 }
 
@@ -30,8 +29,6 @@ const Input = styled("input")<InputProps>`
 
 Input.displayName = "Input"
 
-Input.defaultProps = {
-  variant: "primary",
-}
+Input.defaultProps = { variant: "primary" }
 
 export default Input

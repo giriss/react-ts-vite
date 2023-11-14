@@ -1,7 +1,6 @@
-import type { ButtonHTMLAttributes } from "react"
 import styled from "@emotion/styled"
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   /**
    * Is it a primary or secondary `Button`?
    */
@@ -37,8 +36,6 @@ const Button = styled.button<ButtonProps>(
 
 Button.displayName = "Button"
 
-Button.defaultProps = {
-  variant: "primary",
-}
+Button.defaultProps = { variant: "primary" }
 
 export default Button
