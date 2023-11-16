@@ -15,7 +15,11 @@ export default defineConfig({
     },
   },
   plugins: [react({
-    jsxImportSource: "@emotion/react"
+    jsxImportSource: "@emotion/react",
+    plugins: [
+      ["@swc-jotai/react-refresh", {}],
+      ["@swc-jotai/debug-label", {}],
+    ],
   })],
   test: {
     globals: true,
