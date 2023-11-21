@@ -6,9 +6,8 @@ interface InputProps {
 
 const Input = styled("input")<InputProps>`
   outline: none;
-  padding: 5px 10px;
+  padding: ${({ theme: { spacing } }) => `${spacing.small}`};
   border-radius: 3px;
-  min-width: 300px;
   border: solid 1px ${({ theme }) => theme.colors.secondary[300]};
 
   :focus {

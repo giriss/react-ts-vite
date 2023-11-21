@@ -16,7 +16,14 @@ const theme = {
     small: "8px",
     medium: "16px",
     large: "24px",
+    xLarge: "32px",
     // ... other spacing
+  },
+  text: {
+    color: {
+      light: "white",
+      dark: "black",
+    },
   },
   // ... other theme properties
 }

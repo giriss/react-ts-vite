@@ -1,4 +1,6 @@
-import Tile from "./Tile"
+import Message from "./Message"
+import MessageContainer from "./MessageContainer"
+import Box from "./Box"
 
-export { Tile }
-export default { Tile }
+export { Box, Message, MessageContainer }
+export default { Box, Message, MessageContainer }

@@ -1,26 +1,14 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { Global, ThemeProvider, css } from "@emotion/react"
+import { Global, ThemeProvider } from "@emotion/react"
 import App from "@/App"
 import theme from "@/theme"
-
-const globalCss = css`
-  *:not(pre) {
-    font-family: Roboto, sans-serif;
-  }
-  pre {
-    font-family: "Roboto Mono", monospace;
-  }
-  body {
-    padding: 0;
-    margin: 0;
-  }
-`
+import globalStyles from "./globalStyles"
 
 ReactDOM.createRoot(document.getElementById("root") ?? document.body).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Global styles={globalCss} />
+      <Global styles={theme => globalStyles(theme)} />
       <App />
     </ThemeProvider>
   </React.StrictMode>,
