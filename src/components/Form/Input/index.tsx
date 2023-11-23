@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 
 interface InputProps {
   variant?: "primary" | "secondary"
+  fullWidth?: boolean
 }
 
 const Input = styled("input")<InputProps>`
@@ -9,6 +10,7 @@ const Input = styled("input")<InputProps>`
   padding: ${({ theme: { spacing } }) => `${spacing.small}`};
   border-radius: 3px;
   border: solid 1px ${({ theme }) => theme.colors.secondary[300]};
+  ${({ fullWidth }) => fullWidth && "box-sizing: border-box; width: 100%;"}
 
   :focus {
     border-color: ${({
@@ -28,6 +30,6 @@ const Input = styled("input")<InputProps>`
 
 Input.displayName = "Input"
 
-Input.defaultProps = { variant: "primary" }
+Input.defaultProps = { variant: "primary", fullWidth: false }
 
 export default Input

@@ -2,7 +2,7 @@
 /// <reference types="vite/client" />
 
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import path from "path"
 
 // https://vitejs.dev/config/
@@ -16,10 +16,10 @@ export default defineConfig({
   },
   plugins: [react({
     jsxImportSource: "@emotion/react",
-    plugins: [
-      ["@swc-jotai/react-refresh", {}],
-      ["@swc-jotai/debug-label", {}],
-    ],
+    babel: {
+      plugins: ["@emotion/babel-plugin"],
+      presets: ["jotai/babel/preset"],
+    },
   })],
   test: {
     globals: true,

@@ -1,7 +1,17 @@
-import type { FC } from "react"
+import { lazy, type FC } from "react"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
-import Home from "@/pages/Home"
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: lazy(async () => await import("@/pages/Home")),
+  },
+  {
+    path: "/auth",
+    Component: lazy(async () => await import("@/pages/Auth")),
+  },
+])
 
-const App: FC = () => <Home />
+const App: FC = () => <RouterProvider router={router} />
 
 export default App
